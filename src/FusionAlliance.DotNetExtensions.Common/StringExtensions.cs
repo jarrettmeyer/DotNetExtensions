@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace FusionAlliance.DotNetExtensions.Common
@@ -8,6 +9,29 @@ namespace FusionAlliance.DotNetExtensions.Common
     /// </summary>
     public static class StringExtensions
     {
+        /// <summary>
+        ///     Converts the string to a nullable integer.
+        /// </summary>
+        /// <param name="stringToConvert">String representation of an int. Internal use only.</param>
+        /// <param name="defaultValue">The default value to return in case <paramref name="stringToConvert" /> is null or empty.</param>
+        /// <returns>
+        ///     The string converted to a nullable integer, or <paramref name="defaultValue" /> in cases where
+        ///     <paramref name="stringToConvert" /> is null or empty.
+        /// </returns>
+        public static int? ToInt(this string stringToConvert, int? defaultValue = null)
+        {
+            if (string.IsNullOrEmpty(stringToConvert))
+            {
+                if (defaultValue.HasValue)
+                {
+                    return defaultValue.Value;
+                }
+                return null;
+            }
+
+            return Convert.ToInt32(stringToConvert);
+        }
+
         /// <summary>
         ///     Gets the string formatted as a phone number with parenthesis.
         /// </summary>

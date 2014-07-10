@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace FusionAlliance.DotNetExtensions.Common.Tests
 {
@@ -42,6 +43,37 @@ namespace FusionAlliance.DotNetExtensions.Common.Tests
             var expected = theString.Substring(4);
             var actual = theString.SubstringSafe(4);
             Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        [ExpectedException(ExpectedException = typeof (FormatException))]
+        public void ToInt_alpha_string_throws_exception()
+        {
+            "abc".ToInt();
+        }
+
+        [Test]
+        public void ToInt_null_string_no_default_returns_null()
+        {
+            string theString = null;
+            var actual = theString.ToInt();
+            Assert.IsNull(actual);
+        }
+
+        [Test]
+        public void ToInt_null_string_with_default_returns_default()
+        {
+            string theString = null;
+            const int expected = 99;
+            var actual = theString.ToInt(expected);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void ToInt_numeric_string()
+        {
+            var actual = "123".ToInt();
+            Assert.AreEqual(123, actual);
         }
 
         [Test]

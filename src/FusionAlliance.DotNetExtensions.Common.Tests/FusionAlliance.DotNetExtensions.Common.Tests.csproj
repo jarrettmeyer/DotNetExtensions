@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DateTimeExtensionsTest.cs" />
+    <Compile Include="DecimalExtensionsTest.cs" />
     <Compile Include="EnumExtensionsTest.cs" />
     <Compile Include="IntExtensionsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
