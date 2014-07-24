@@ -9,6 +9,29 @@ namespace FusionAlliance.DotNetExtensions.Common
     /// </summary>
     public static class StringExtensions
     {
+        public static string Base64Decode(this string stringToDecode)
+        {
+            if (stringToDecode == null)
+                throw new ArgumentNullException("stringToDecode");
+
+            byte[] stringAsBytes = Convert.FromBase64String(stringToDecode);
+            return Encoding.UTF8.GetString(stringAsBytes);
+        }
+
+        /// <summary>
+        /// Base64 encode a string.
+        /// </summary>
+        /// <param name="stringToEncode">String to encode</param>
+        /// <returns>Base64 encoded string</returns>
+        public static string Base64Encode(this string stringToEncode)
+        {
+            if (stringToEncode == null)
+                throw new ArgumentNullException("stringToEncode");
+
+            byte[] sourceAsBytes = Encoding.UTF8.GetBytes(stringToEncode);
+            return Convert.ToBase64String(sourceAsBytes);
+        }
+
         /// <summary>
         ///     Converts the string to a nullable integer.
         /// </summary>
