@@ -10,6 +10,29 @@ namespace FusionAlliance.DotNetExtensions.Common
     public static class StringExtensions
     {
         /// <summary>
+        /// Base64 decode a string.
+        /// </summary>
+        /// <param name="stringToDecode">String to decode.</param>
+        /// <returns>Decoded string.</returns>
+        public static string Base64Decode(this string stringToDecode)
+        {
+            if (stringToDecode == null)
+                throw new ArgumentNullException("stringToDecode");
+
+            byte[] stringAsBytes = Convert.FromBase64String(stringToDecode);
+            return Encoding.UTF8.GetString(stringAsBytes);
+        }
+
+        public static string Base64Encode(this string stringToEncode)
+        {
+            if (stringToEncode == null)
+                throw new ArgumentNullException("stringToEncode");
+
+            byte[] stringAsBytes = Encoding.UTF8.GetBytes(stringToEncode);
+            return Convert.ToBase64String(stringAsBytes);
+        }
+
+        /// <summary>
         ///     Converts the string to a nullable integer.
         /// </summary>
         /// <param name="stringToConvert">String representation of an int. Internal use only.</param>
