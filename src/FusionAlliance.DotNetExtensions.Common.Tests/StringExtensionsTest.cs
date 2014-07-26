@@ -7,6 +7,33 @@ namespace FusionAlliance.DotNetExtensions.Common.Tests
     public class StringExtensionsTest
     {
         [Test]
+        [TestCase("SGVsbG8sIFdvcmxkIQ==", Result = "Hello, World!")]
+        public string Base64Decode_returns_expected_string(string str)
+        {
+            return str.Base64Decode();
+        }
+
+        [Test]
+        public void Base64Decode_throws_an_exception_when_string_is_null()
+        {
+            Assert.Throws<ArgumentNullException>(() => { ((string)null).Base64Decode(); });
+        }
+
+        [Test]
+        [TestCase("Hello, World!", Result = "SGVsbG8sIFdvcmxkIQ==")]
+        [TestCase("This is my secret message", Result = "VGhpcyBpcyBteSBzZWNyZXQgbWVzc2FnZQ==")]
+        public string Base64Encode_returns_expected_string(string str)
+        {
+            return str.Base64Encode();
+        }
+
+        [Test]
+        public void Base64Encode_throw_an_exception_when_string_is_null()
+        {
+            Assert.Throws<ArgumentNullException>(() => { ((string)null).Base64Encode(); });
+        }
+
+        [Test]
         public void ConvertCamelCaseToPascalCase()
         {
             const string input = "helloWorld";
