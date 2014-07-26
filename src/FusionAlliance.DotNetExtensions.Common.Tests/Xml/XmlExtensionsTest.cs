@@ -9,13 +9,21 @@ namespace FusionAlliance.DotNetExtensions.Common.Tests.Xml
     [TestFixture]
     public class XmlExtensionsTest
     {
+        public class DemoObject
+        {
+            public string Name { get; set; }
+
+            public int Age { get; set; }
+        }
+
         [Test]
         public void ToXml_can_convert_an_object_to_valid_xml()
         {
-            DemoObject obj = new DemoObject { Name = "John Doe", Age = 99 };
+            var obj = new DemoObject {Name = "John Doe", Age = 99};
             var xml = obj.ToXml().ToString(SaveOptions.DisableFormatting);
             Debug.WriteLine(xml);
-            var expected = "<DemoObject xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><Name>John Doe</Name><Age>99</Age></DemoObject>";
+            var expected =
+                "<DemoObject xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><Name>John Doe</Name><Age>99</Age></DemoObject>";
             Assert.AreEqual(expected, xml);
         }
 
@@ -24,13 +32,6 @@ namespace FusionAlliance.DotNetExtensions.Common.Tests.Xml
         {
             DemoObject obj = null;
             Assert.Throws<ArgumentNullException>(() => { obj.ToXml(); });
-        }
-
-        public class DemoObject
-        {
-            public string Name { get; set; }
-
-            public int Age { get; set; }
         }
     }
 }

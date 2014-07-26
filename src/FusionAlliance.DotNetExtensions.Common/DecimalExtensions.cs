@@ -8,7 +8,7 @@ namespace FusionAlliance.DotNetExtensions.Common
     public static class DecimalExtensions
     {
         /// <summary>
-        /// Converts the value to an integer.
+        ///     Converts the value to an integer.
         /// </summary>
         public static int ToInt(this decimal d)
         {
@@ -16,7 +16,7 @@ namespace FusionAlliance.DotNetExtensions.Common
         }
 
         /// <summary>
-        /// Converts the value to a long.
+        ///     Converts the value to a long.
         /// </summary>
         public static long ToLong(this decimal d)
         {

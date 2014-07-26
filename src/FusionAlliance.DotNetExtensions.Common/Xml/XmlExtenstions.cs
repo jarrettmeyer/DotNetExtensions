@@ -9,7 +9,9 @@ namespace FusionAlliance.DotNetExtensions.Common.Xml
             where T : class
         {
             if (source == null)
+            {
                 throw new ArgumentNullException("source");
+            }
 
             return XmlUtil.ObjectToXml(source);
         }
