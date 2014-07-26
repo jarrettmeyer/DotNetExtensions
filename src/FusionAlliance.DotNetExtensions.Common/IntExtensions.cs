@@ -8,7 +8,7 @@ namespace FusionAlliance.DotNetExtensions.Common
     public static class IntExtensions
     {
         /// <summary>
-        /// Returns the number of days as a time span.
+        ///     Returns the number of days as a time span.
         /// </summary>
         /// <param name="value">Value</param>
         /// <returns>Number of days</returns>
@@ -107,7 +107,7 @@ namespace FusionAlliance.DotNetExtensions.Common
         }
 
         /// <summary>
-        /// Returns the number of hours as a time span.
+        ///     Returns the number of hours as a time span.
         /// </summary>
         /// <param name="value">Value</param>
         /// <returns>Number of hours</returns>
@@ -117,7 +117,7 @@ namespace FusionAlliance.DotNetExtensions.Common
         }
 
         /// <summary>
-        /// Returns the number of milliseconds as a time span.
+        ///     Returns the number of milliseconds as a time span.
         /// </summary>
         /// <param name="value">Value</param>
         /// <returns>Number of days</returns>
@@ -127,7 +127,7 @@ namespace FusionAlliance.DotNetExtensions.Common
         }
 
         /// <summary>
-        /// Returns the number of minutes as a time span.
+        ///     Returns the number of minutes as a time span.
         /// </summary>
         /// <param name="value">Value</param>
         /// <returns>Number of days</returns>
@@ -137,7 +137,7 @@ namespace FusionAlliance.DotNetExtensions.Common
         }
 
         /// <summary>
-        /// Returns the number of seconds as a time span.
+        ///     Returns the number of seconds as a time span.
         /// </summary>
         /// <param name="value">Value</param>
         /// <returns>Number of days</returns>
