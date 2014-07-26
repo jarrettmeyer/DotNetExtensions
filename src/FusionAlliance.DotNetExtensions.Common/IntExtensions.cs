@@ -8,6 +8,16 @@ namespace FusionAlliance.DotNetExtensions.Common
     public static class IntExtensions
     {
         /// <summary>
+        /// Returns the number of days as a time span.
+        /// </summary>
+        /// <param name="value">Value</param>
+        /// <returns>Number of days</returns>
+        public static TimeSpan Days(this int value)
+        {
+            return TimeSpan.FromDays(value);
+        }
+
+        /// <summary>
         ///     Computes the value, bounded by the specified min and max.
         /// </summary>
         /// <param name="value">
@@ -94,6 +104,46 @@ namespace FusionAlliance.DotNetExtensions.Common
         public static int? GetBoundedOptionalValue(this int? value, int min, int max)
         {
             return value == null ? (int?) null : GetBoundedValue(value.Value, min, max);
+        }
+
+        /// <summary>
+        /// Returns the number of hours as a time span.
+        /// </summary>
+        /// <param name="value">Value</param>
+        /// <returns>Number of hours</returns>
+        public static TimeSpan Hours(this int value)
+        {
+            return TimeSpan.FromHours(value);
+        }
+
+        /// <summary>
+        /// Returns the number of milliseconds as a time span.
+        /// </summary>
+        /// <param name="value">Value</param>
+        /// <returns>Number of days</returns>
+        public static TimeSpan Milliseconds(this int value)
+        {
+            return TimeSpan.FromMilliseconds(value);
+        }
+
+        /// <summary>
+        /// Returns the number of minutes as a time span.
+        /// </summary>
+        /// <param name="value">Value</param>
+        /// <returns>Number of days</returns>
+        public static TimeSpan Minutes(this int value)
+        {
+            return TimeSpan.FromMinutes(value);
+        }
+
+        /// <summary>
+        /// Returns the number of seconds as a time span.
+        /// </summary>
+        /// <param name="value">Value</param>
+        /// <returns>Number of days</returns>
+        public static TimeSpan Seconds(this int value)
+        {
+            return TimeSpan.FromSeconds(value);
         }
     }
 }
