@@ -22,15 +22,13 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("b95decd0-6167-41e6-b018-fa3667f8d5f8")]
 
-// Version information for an assembly consists of the following four values:
+// Version information for an assembly consists of the following values:
 //
 //      Major Version
 //      Minor Version 
-//      Build Number
-//      Revision
+//      Patch Number
 //
-// You can specify all the values or you can default the Build and Revision Numbers 
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.2.0")]
-[assembly: AssemblyFileVersion("1.0.2.0")]
+// See http://docs.nuget.org/docs/Reference/Versioning for details.
+
+[assembly: AssemblyVersion("1.1.0")]
+[assembly: AssemblyFileVersion("1.1.0")]
