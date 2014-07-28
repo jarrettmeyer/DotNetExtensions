@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\CollectionExtensionsTests.cs" />
     <Compile Include="DateTimeExtensionsTest.cs" />
     <Compile Include="DecimalExtensionsTest.cs" />
     <Compile Include="DoubleExtensionsTests.cs" />
